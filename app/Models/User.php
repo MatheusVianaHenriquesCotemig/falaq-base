@@ -39,6 +39,10 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
+    public function perguntas(): HasMany
+    {
+        return $this->hasMany(Evento::class);
+    }
     protected function casts(): array
     {
         return [
@@ -46,4 +50,5 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    
 }
